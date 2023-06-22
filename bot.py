@@ -26,9 +26,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
 async def ayuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.callback_query.answer()
-    ayuda_text = '''/tiempo para ver imagen satelital actualizada de las condiciones atmosféricas en América Central.
-/otros para ver ejemplo.
-/saludo otro caso.'''
+    ayuda_text = '''/tiempo para ver imagen satelital actualizada de las condiciones atmosféricas en América Central.'''
     await context.bot.send_message(chat_id=update.effective_chat.id, text=ayuda_text)
 
 async def tiempo(update: Update, context: ContextTypes.DEFAULT_TYPE):
