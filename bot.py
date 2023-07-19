@@ -32,12 +32,9 @@ async def ayuda(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def tiempo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_chat_action(chat_id=update.effective_chat.id, action='upload_photo')
 
-    ahora = datetime.now()-timedelta(hours=6)
-    h18 = ahora.replace(hour=18, minute=0, second=0, microsecond=0)
-    h06 = ahora.replace(day=datetime.now().day+1, hour=6, minute=0, second=0, microsecond=0)
+    ahora = datetime.now()
 
-    if ahora >= h18 and ahora < h06:
-
+    if (ahora.hour >= 18 and ahora.hour<=23) or (ahora.hour >= 0 and ahora.hour<6):
         html = urlopen('https://weather.msfc.nasa.gov/cgi-bin/get-abi?satellite=GOESEastfullDiskband14&lat=11.5&lon=-84.3&zoom=1&width=1000&height=800&quality=100&palette=ir2.pal', context=ctx).read()
         
         soup = BeautifulSoup(html, 'html.parser')

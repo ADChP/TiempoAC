@@ -1,0 +1,6 @@
+__pycache__
+venv
+internal.py
+main.py
+notas.py
+workspace.code-workspace
